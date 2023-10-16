@@ -1,2 +1,0 @@
-bin/server v4 51516 -i resposta.txt
-bin/client 127.0.1.1 515230
