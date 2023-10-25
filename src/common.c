@@ -103,7 +103,7 @@ int server_sockaddr_init(char *tipoEndereco, char *portaStr,
     //se for protocolo ipv6
     else if(strcmp(tipoEndereco, "v6") == 0){
         struct sockaddr_in6 *addr6 = (struct socktaddr_in6 *)(storage);
-        addr6-> sin6_family = AF_INET;
+        addr6-> sin6_family = AF_INET6;
         addr6->sin6_port = porta;
         addr6->sin6_addr = in6addr_any;
         return 0;
