@@ -217,6 +217,12 @@ void main(int argc, char *argv[]){
         logexit("socket");
     }
 
+    //seta socket para reutilizar portas
+    int enable = 1;
+    if(setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &enable, sizeof(int)) != 0){
+        logexit("setsockopt");
+    }
+
     struct sockaddr *addr = (struct sockaddr *)(&storage);
     if (bind(sock, addr, sizeof(storage)) != 0){
         logexit("bind");
